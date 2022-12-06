@@ -1,20 +1,30 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+  Reproductor de Youtube
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content >
+ <div style="width:100%" id="divid">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+
+ </div><br>
+
+ <ion-grid>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <ion-textarea [(ngModel)]="videoId" placeholder="Introducir ID de Video">
+        </ion-textarea>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col *ngIf="stopped" ><ion-button style="width:100%" (click)="play()">Play</ion-button></ion-col>
+    <ion-col><ion-button style="width:100%" (click)="stop()">Stop</ion-button></ion-col>
+
+  </ion-row>
+ </ion-grid>
 </ion-content>
